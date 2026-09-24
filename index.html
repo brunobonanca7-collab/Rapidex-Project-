@@ -252,7 +252,8 @@ section[id]{scroll-margin-top:88px;}
 .rpx-map-link:hover{color:var(--rpx-hero-ink);border-color:var(--rpx-hero-ink);}
 
 /* radar — a real map of the region: each place is a km offset from Tatuí (--x east, --y north) inside a 520-wide design
-   space scaled to the panel (tan(atan2()) turns 100cqw/520px into the unitless factor scale() needs). --rz (px per km),
+   space scaled to the panel by --rs, which the script sets from the measured width (the CSS-only tan(atan2(100cqw, 520px))
+   factor rendered the whole map blank in Safari on iPhone). --rz (px per km),
    --rtx/--rty (where Tatuí sits) and --rh (height) are registered so opening the map zooms out continuously. */
 @property --rz{syntax:"<number>";inherits:true;initial-value:3;}
 @property --rtx{syntax:"<number>";inherits:true;initial-value:228;}
@@ -262,7 +263,7 @@ section[id]{scroll-margin-top:88px;}
 .rpx-radar::before{content:"";display:block;padding-top:calc(var(--rh) / 520 * 100%);}
 .rpx-radar.is-open{--rz:2;--rtx:150;--rty:156;--rh:290;}
 .rpx-radar:hover{border-color:rgba(254,131,48,0.38);}
-.rpx-radar-scale{position:absolute;top:0;left:0;width:520px;height:calc(var(--rh) * 1px);transform-origin:top left;transform:scale(.94);transform:scale(tan(atan2(100cqw, 520px)));}
+.rpx-radar-scale{position:absolute;top:0;left:0;width:520px;height:calc(var(--rh) * 1px);transform-origin:top left;transform:scale(var(--rs,.94));}
 .rpx-radar-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(245,243,236,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(245,243,236,0.05) 1px,transparent 1px);background-size:calc(var(--rz) * 8px) calc(var(--rz) * 8px);background-position:calc(var(--rtx) * 1px) calc(var(--rty) * 1px);}
 .rpx-radar-towns{position:absolute;overflow:visible;pointer-events:none;}
 .rpx-rt{position:absolute;left:calc(var(--rtx) * 1px);top:calc(var(--rty) * 1px);width:calc(var(--d) * var(--rz) * 1px);height:0;transform-origin:0 0;transform:rotate(var(--a));z-index:2;}
@@ -1148,6 +1149,7 @@ class Component extends DCLogic {
     this.handleMenuClose = this.handleMenuClose.bind(this);
     this.handleFaqClick = this.handleFaqClick.bind(this);
     this.handleRadarToggle = this.handleRadarToggle.bind(this);
+    this.syncRadarScale = this.syncRadarScale.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
   }
 
@@ -1159,11 +1161,30 @@ class Component extends DCLogic {
     window.addEventListener('scroll', this.handleScroll, { passive: true });
     window.addEventListener('resize', this.handleScroll, { passive: true });
     this.handleScroll();
+    this._radarEl = document.querySelector('.rpx-radar');
+    if (this._radarEl) {
+      this.syncRadarScale();
+      if (window.ResizeObserver) {
+        this._radarObserver = new ResizeObserver(this.syncRadarScale);
+        this._radarObserver.observe(this._radarEl);
+      } else {
+        window.addEventListener('resize', this.syncRadarScale, { passive: true });
+      }
+    }
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
     window.removeEventListener('resize', this.handleScroll);
+    window.removeEventListener('resize', this.syncRadarScale);
+    if (this._radarObserver) { this._radarObserver.disconnect(); }
+  }
+
+  syncRadarScale() {
+    var el = this._radarEl;
+    if (!el) { return; }
+    var w = el.clientWidth;
+    if (w > 0) { el.style.setProperty('--rs', String(w / 520)); }
   }
 
   handleMenuToggle(e) {
