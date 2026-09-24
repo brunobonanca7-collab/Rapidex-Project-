@@ -1,5 +1,6 @@
 # Rapidex Transportes — compressão e cache (Hostinger / LiteSpeed / Apache)
 AddType image/webp .webp
+AddType application/manifest+json .webmanifest
 DirectoryIndex index.html index.php
 
 <IfModule mod_deflate.c>

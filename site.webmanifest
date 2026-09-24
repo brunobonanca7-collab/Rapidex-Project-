@@ -1,0 +1,20 @@
+{
+ "name": "Rapidex Transportes",
+ "short_name": "Rapidex",
+ "icons": [
+  {
+   "src": "/favicon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/favicon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ],
+ "theme_color": "#15140F",
+ "background_color": "#15140F",
+ "display": "browser",
+ "start_url": "/"
+}
