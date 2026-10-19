@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
 <title>Rapidex Transportes | Transportadora em Tatuí – SP</title>
 <meta name="description" content="Transportadora em Tatuí – SP com saídas diárias de Tatuí para São Paulo e de São Paulo para Tatuí. Coleta, transporte e entrega com rastreamento. Cotação pelo WhatsApp.">
 <meta name="theme-color" content="#15140F">
@@ -67,6 +68,8 @@ section[id]{scroll-margin-top:88px;}
 /* reveal on scroll */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--rpx-ease),transform .7s var(--rpx-ease);}
 .reveal.is-visible{opacity:1;transform:translateY(0);}
+/* without JS nothing ever gets .is-visible, so keep the content shown */
+html:not(.js) .reveal,html:not(.js) .rpx-card,html:not(.js) .rpx-why-item,html:not(.js) .rpx-fleet-item,html:not(.js) .rpx-footer-top>div,html:not(.js) .rpx-footer-bottom{opacity:1;transform:none;}
 .rpx-card-grid.reveal,.rpx-why-grid.reveal,.rpx-steps.reveal,footer.reveal,.rpx-fleet-grid.reveal{opacity:1;transform:none;}
 
 /* skip link */
@@ -697,7 +700,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rpx-orange-ink);out
 <section id="rpx-stats" class="rpx-stats reveal">
   <div class="rpx-stats-inner">
     <div class="rpx-stat">
-      <div class="rpx-stat-num"><span id="rpx-years-count">20</span>+</div>
+      <div class="rpx-stat-num"><span id="rpx-years-count">21</span>+</div>
       <div class="rpx-stat-label">anos entregando com confiança em Tatuí — desde 2005</div>
     </div>
     <div class="rpx-stat">
