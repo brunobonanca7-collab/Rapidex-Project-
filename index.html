@@ -37,7 +37,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Rapidex Transportes", "url": "https://rapidextatui.com/", "logo": "https://rapidextatui.com/assets/rapidex-logo.png", "image": "https://rapidextatui.com/assets/og-rapidex.jpg", "description": "Transporte de encomendas fracionadas e exclusivas, com saídas diárias entre Tatuí e São Paulo, capital e região.", "foundingDate": "2005-10-10", "telephone": "+55-15-99669-4005", "email": "jairo.rapidextransportes@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Tatuí", "addressRegion": "SP", "addressCountry": "BR"}, "geo": {"@type": "GeoCoordinates", "latitude": -23.3355705, "longitude": -47.8533787}, "areaServed": ["Tatuí e região", "São Paulo (capital) e região"], "sameAs": ["https://www.facebook.com/rapidex.floriano", "https://www.google.com/maps/place/TRANSPORTADORA+RAPIDEX+TATUI+LTDA/@-23.3355505,-47.8636785,3010m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94c5d8e336f9d78f:0xbaa27cdbf4aa8ed2!8m2!3d-23.3355705!4d-47.8533787!16s%2Fg%2F11c1xp5sr7"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&amp;family=Barlow:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&amp;family=Barlow:wght@400;500;600;700&amp;family=Archivo:wdth,wght@125,400;125,800&amp;display=swap" rel="stylesheet">
 <style>
 :root{
   --rpx-bg:#F5F4EF;
@@ -396,17 +396,37 @@ footer.is-visible .rpx-footer-top>div:nth-child(4){transition-delay:.58s;}
 .rpx-social a:hover::before{opacity:1;transform:scale(1);}
 .rpx-social a:hover svg{transform:scale(1.1);}
 .rpx-social a:active{transform:translateY(-2px) scale(1.02);}
-.rpx-credit{display:flex;justify-content:center;padding-top:28px;}
-.rpx-credit-card{display:flex;align-items:center;gap:22px;max-width:100%;padding:18px 26px 18px 22px;border-radius:20px;background:#0A0907;border:1px solid rgba(245,243,236,.08);color:#EDEAE0;text-decoration:none;transition:border-color .25s ease,transform .25s ease;}
-.rpx-credit-card:hover{border-color:rgba(254,131,48,.55);transform:translateY(-2px);}
-.rpx-credit-star{width:48px;height:48px;flex:none;color:#F1EEE4;filter:drop-shadow(0 0 8px rgba(245,243,236,.45));}
-.rpx-credit-txt{display:flex;flex-direction:column;gap:3px;}
-.rpx-credit-txt small{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,243,236,.55);}
-.rpx-credit-txt strong{font-size:22px;letter-spacing:.04em;font-weight:800;text-transform:uppercase;color:#F5F3EC;line-height:1.1;}
-.rpx-credit-txt span{font-size:14px;color:rgba(245,243,236,.55);}
-.rpx-credit-ig{display:flex;align-items:center;gap:10px;padding-left:22px;border-left:1px solid rgba(245,243,236,.14);align-self:stretch;font-size:15px;color:rgba(245,243,236,.75);white-space:nowrap;}
-.rpx-credit-ig svg{width:20px;height:20px;flex:none;}
-@media (max-width:640px){.rpx-credit{padding-bottom:64px;}.rpx-credit-card{flex-wrap:wrap;gap:14px 16px;padding:16px 18px;}.rpx-credit-ig{border-left:0;border-top:1px solid rgba(245,243,236,.14);padding:12px 0 0;width:100%;}.rpx-credit-txt strong{font-size:19px;}}
+/* assinatura do estúdio Bonança — idêntica à do site da Casinha do Garimpo; o sol é recortado da logo original (não redesenhar) */
+.f-credit-wrap{display:flex;justify-content:center;margin-top:28px;padding-top:12px;}
+.f-credit{display:inline-flex;align-items:center;gap:14px;margin:0;padding:12px 18px 12px 14px;border-radius:12px;background:#0e0d0c;border:1px solid rgba(255,255,255,.07);color:inherit;text-decoration:none;transition:border-color .4s,transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s;}
+.f-credit:hover{border-color:rgba(255,255,255,.2);transform:translateY(-3px);box-shadow:0 18px 40px -20px rgba(0,0,0,.8);}
+.f-credit:focus-visible{outline:2px solid var(--rpx-orange);outline-offset:4px;}
+.fc-ig{display:inline-flex;align-items:center;gap:7px;margin-left:4px;padding-left:16px;align-self:stretch;border-left:1px solid rgba(255,255,255,.1);font:500 12px/1 "Archivo",sans-serif;color:rgba(245,243,236,.7);white-space:nowrap;transition:color .3s;}
+.fc-ig svg{width:14px;height:14px;flex:none;}
+.fc-ig .fc-arrow{width:10px;height:10px;transition:transform .4s cubic-bezier(.22,1,.36,1);}
+.f-credit:hover .fc-ig{color:#f5f3ec;}
+.f-credit:hover .fc-arrow{transform:translate(2px,-2px);}
+.fc-sol-wrap{display:inline-flex;flex:none;}
+.fc-sol{width:30px;height:auto;flex:none;animation:solGira 40s linear infinite;}
+@keyframes solGira{to{transform:rotate(360deg);}}
+.fc-txt{display:flex;flex-direction:column;gap:4px;white-space:nowrap;font-family:"Archivo",sans-serif;color:#f5f3ec;}
+.fc-txt small{font:500 8.5px/1.2 "Archivo",sans-serif;font-stretch:100%;letter-spacing:.26em;text-transform:uppercase;color:rgba(245,243,236,.55);}
+.fc-txt b{display:inline-block;font-weight:800;font-stretch:125%;font-size:16px;line-height:1.2;letter-spacing:.02em;text-transform:uppercase;clip-path:inset(-30% 0 -30% 0);}
+.fc-txt span{font-size:11.5px;line-height:1.3;color:rgba(245,243,236,.6);}
+/* entrada (mesma sequência da Casinha): o cartão sobe, o sol nasce girando e o nome se escreve da esquerda pra direita */
+.js .f-credit:not(.is-in){opacity:0;transform:translateY(24px);}
+.js .f-credit:not(.is-in) .fc-sol-wrap{opacity:0;transform:scale(.2) rotate(-200deg);}
+.js .f-credit:not(.is-in) .fc-txt small,.js .f-credit:not(.is-in) .fc-txt>span{opacity:0;transform:translateY(8px);}
+.js .f-credit:not(.is-in) .fc-txt b{clip-path:inset(-30% 100% -30% 0);}
+.js .f-credit:not(.is-in) .fc-ig{opacity:0;transform:translateX(-10px);}
+.f-credit.is-anim{transition:opacity .8s cubic-bezier(.215,.61,.355,1),transform .8s cubic-bezier(.215,.61,.355,1),border-color .4s,box-shadow .5s;}
+.f-credit.is-anim .fc-sol-wrap{transition:opacity 1.3s cubic-bezier(.215,.61,.355,1) .15s,transform 1.3s cubic-bezier(.34,1.56,.64,1) .15s;}
+.f-credit.is-anim .fc-txt small{transition:opacity .6s cubic-bezier(.215,.61,.355,1) .4s,transform .6s cubic-bezier(.215,.61,.355,1) .4s;}
+.f-credit.is-anim .fc-txt b{transition:clip-path 1s cubic-bezier(.455,.03,.515,.955) .5s;}
+.f-credit.is-anim .fc-txt>span{transition:opacity .6s cubic-bezier(.215,.61,.355,1) 1.1s,transform .6s cubic-bezier(.215,.61,.355,1) 1.1s;}
+.f-credit.is-anim .fc-ig{transition:opacity .6s cubic-bezier(.215,.61,.355,1) 1.25s,transform .6s cubic-bezier(.215,.61,.355,1) 1.25s,color .3s;}
+@media (prefers-reduced-motion:reduce){.fc-sol{animation:none;}.js .f-credit:not(.is-in),.js .f-credit:not(.is-in) *{opacity:1!important;transform:none!important;clip-path:inset(-30% 0 -30% 0)!important;}}
+@media (max-width:640px){.f-credit-wrap{padding-bottom:72px;}.f-credit{flex-wrap:wrap;justify-content:center;padding:12px 16px;}.fc-ig{flex-basis:100%;justify-content:center;margin:2px 0 0;padding:10px 0 0;border-left:0;border-top:1px solid rgba(255,255,255,.1);}}
 .rpx-footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:22px;padding-right:84px;font-size:13px;opacity:0;transform:translateY(14px);transition:opacity .6s var(--rpx-ease) .58s,transform .6s var(--rpx-ease) .58s;}
 footer.is-visible .rpx-footer-bottom{opacity:1;transform:translateY(0);}
 
@@ -1147,17 +1167,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rpx-orange-ink);out
       <span>© <span id="rpx-year">2026</span> Rapidex Transportes Tatuí. Todos os direitos reservados.</span>
       <span>CNPJ 37.424.174/0001-91</span>
     </div>
-    <div class="rpx-credit">
-      <a class="rpx-credit-card" href="https://www.instagram.com/bonancacreative" target="_blank" rel="noopener" aria-label="Site criado por Bonança, creative technology studio — Instagram @bonancacreative">
-        <svg class="rpx-credit-star" viewBox="0 0 48 48" aria-hidden="true"><path d="M31.0 24.0L46.0 24.0M30.9 25.4L37.7 26.7M30.5 26.7L44.3 32.4M29.8 27.9L35.6 31.8M28.9 28.9L39.6 39.6M27.9 29.8L31.8 35.6M26.7 30.5L32.4 44.3M25.4 30.9L26.7 37.7M24.0 31.0L24.0 46.0M22.6 30.9L21.3 37.7M21.3 30.5L15.6 44.3M20.1 29.8L16.2 35.6M19.1 28.9L8.4 39.6M18.2 27.9L12.4 31.8M17.5 26.7L3.7 32.4M17.1 25.4L10.3 26.7M17.0 24.0L2.0 24.0M17.1 22.6L10.3 21.3M17.5 21.3L3.7 15.6M18.2 20.1L12.4 16.2M19.1 19.1L8.4 8.4M20.1 18.2L16.2 12.4M21.3 17.5L15.6 3.7M22.6 17.1L21.3 10.3M24.0 17.0L24.0 2.0M25.4 17.1L26.7 10.3M26.7 17.5L32.4 3.7M27.9 18.2L31.8 12.4M28.9 19.1L39.6 8.4M29.8 20.1L35.6 16.2M30.5 21.3L44.3 15.6M30.9 22.6L37.7 21.3" stroke="currentColor" stroke-width=".9" stroke-linecap="round" fill="none" opacity=".7"/><circle cx="24" cy="24" r="7.5" fill="currentColor"/></svg>
-        <div class="rpx-credit-txt"><small>Site criado por</small><strong>Bonança</strong><span>creative technology studio</span></div>
-        <div class="rpx-credit-ig">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
-          <span>@bonancacreative</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:14px;height:14px"><path d="M7 17L17 7M8 7h9v9"/></svg>
-        </div>
+    <div class="f-credit-wrap">
+      <a class="f-credit" href="https://instagram.com/bonancacreative/" target="_blank" rel="noopener" aria-label="Site criado por Bonança, creative technology studio — ver no Instagram @bonancacreative">
+        <span class="fc-sol-wrap"><img class="fc-sol" src="assets/bonanca-sol.png" alt="" width="151" height="150" loading="lazy" decoding="async"></span>
+        <span class="fc-txt"><small>Site criado por</small><b>Bonança</b><span>creative technology studio</span></span>
+        <span class="fc-ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span>@bonancacreative</span><svg class="fc-arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11L11 3M4.5 3H11V9.5"/></svg></span>
       </a>
     </div>
+    <script>(function(){var c=document.querySelector('.f-credit');if(!c)return;function go(){c.classList.add('is-anim');requestAnimationFrame(function(){c.classList.add('is-in');});setTimeout(function(){c.classList.remove('is-anim');},2000);}if(!('IntersectionObserver' in window)){c.classList.add('is-in');return;}var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();go();}},{rootMargin:'0px 0px -5% 0px'});io.observe(c);})();</script>
   </div>
 </footer>
 
