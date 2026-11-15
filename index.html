@@ -616,7 +616,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rpx-orange-ink);out
   .rpx-route-wrap{width:205px;height:205px;}
   .rpx-route-scale{transform:scale(0.4881);}
 }
-.rpx-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+.rpx-card-link{margin-top:auto;font-weight:700;font-size:15px;color:var(--rpx-orange-ink);text-decoration:none;display:inline-flex;gap:6px;align-items:center;}
+.rpx-card-link:hover{text-decoration:underline;}
+.rpx-foot-links{margin-top:10px;}
+.rpx-foot-links a{color:var(--rpx-hero-soft);text-decoration:underline;text-underline-offset:3px;}
+.rpx-foot-links a:hover{color:var(--rpx-orange);}
 </style>
 <style>.rpx-versao{display:none;position:fixed;left:12px;bottom:12px;z-index:400;padding:8px 12px;border-radius:8px;background:#15140F;color:#F5F3EC;border:1px solid #FE8330;font:600 13px/1.2 "Barlow",sans-serif;box-shadow:0 8px 20px -8px rgba(0,0,0,.6);}.rpx-versao:target{display:block;}</style>
 </head>
@@ -864,11 +868,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rpx-orange-ink);out
         <div class="rpx-icn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B74A01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="M3.27 6.96 12 12.01l8.73-5.05"></path><path d="M12 22.08V12"></path></svg></div>
         <h3>Rota diária para São Paulo</h3>
         <p>Todos os dias, de Tatuí para São Paulo e de São Paulo para Tatuí, atendendo a capital e a região, com acompanhamento durante todo o trajeto.</p>
+        <a class="rpx-card-link" href="transportadora-tatui-sao-paulo/">Rota Tatuí–São Paulo <span aria-hidden="true">→</span></a>
       </div>
       <div class="rpx-card">
         <div class="rpx-icn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B74A01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
         <h3>Entregas locais</h3>
         <p>Coletas e entregas rápidas dentro de Tatuí e cidades vizinhas, sem burocracia.</p>
+        <a class="rpx-card-link" href="entregas-em-tatui-e-regiao/">Entregas em Tatuí e região <span aria-hidden="true">→</span></a>
       </div>
       <div class="rpx-card">
         <div class="rpx-icn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B74A01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg></div>
@@ -1147,6 +1153,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rpx-orange-ink);out
       <div>
         <img src="assets/rapidex-logo.png" alt="Rapidex Transportes Tatuí-SP" width="218" height="94">
         <p class="desc">Transporte de encomendas fracionadas e exclusivas, com coleta, rastreamento e entrega porta a porta — diariamente entre Tatuí e São Paulo, capital e região.</p>
+        <p class="desc rpx-foot-links"><a href="transportadora-tatui-sao-paulo/">Transportadora Tatuí–São Paulo</a> · <a href="entregas-em-tatui-e-regiao/">Entregas em Tatuí e região</a></p>
       </div>
       <div class="rpx-footer-col">
         <h4>Contato</h4>

@@ -9,4 +9,15 @@
     <image:image><image:loc>https://rapidextatui.com/assets/frota-carregamento.webp</image:loc></image:image>
     <image:image><image:loc>https://rapidextatui.com/assets/estrada-hero.webp</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://rapidextatui.com/transportadora-tatui-sao-paulo/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <image:image><image:loc>https://rapidextatui.com/assets/frota-caminhao-azul.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://rapidextatui.com/entregas-em-tatui-e-regiao/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <image:image><image:loc>https://rapidextatui.com/assets/frota-picape.webp</image:loc></image:image>
+    <image:image><image:loc>https://rapidextatui.com/assets/frota-carregamento.webp</image:loc></image:image>
+  </url>
 </urlset>
